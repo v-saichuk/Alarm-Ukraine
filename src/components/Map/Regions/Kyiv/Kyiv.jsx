@@ -1,23 +1,59 @@
-import { KyivG } from './District/KyivG';
+import { KyivG, KyivGName } from './District/KyivG';
 import { Pripyatsky } from './District/Pripyatsky';
-import { Obukhovsky } from './District/Obukhovsky';
-import { Vyshgorodsky } from './District/Vyshgorodsky';
-import { Buchanskiy } from './District/Buchanskiy';
-import { Fastovsky } from './District/Fastovsky';
-import { Belotserkovsky } from './District/Belotserkovsky';
-import { Boryspilsky } from './District/Boryspilsky';
-import { Brovarsky } from './District/Brovarsky';
+import { Obukhovsky, ObukhovskyName } from './District/Obukhovsky';
+import { Vyshgorodsky, VyshgorodskyName } from './District/Vyshgorodsky';
+import { Buchanskiy, BuchanskiyName } from './District/Buchanskiy';
+import { Fastovsky, FastovskyName } from './District/Fastovsky';
+import { Belotserkovsky, BelotserkovskyName } from './District/Belotserkovsky';
+import { Boryspilsky, BoryspilskyName } from './District/Boryspilsky';
+import { Brovarsky, BrovarskyName } from './District/Brovarsky';
 
 export const Kyiv = () => (
-    <g fill="#333" stroke="#808080" fillOpacity=".70196">
-        <KyivG />
-        <Pripyatsky />
-        <Obukhovsky />
-        <Vyshgorodsky />
-        <Buchanskiy />
-        <Fastovsky />
-        <Belotserkovsky />
-        <Boryspilsky />
-        <Brovarsky />
-    </g>
+    <>
+        {/* MAP REGIONS */}
+        <g fill="#333" stroke="#808080" fillOpacity=".70196">
+            <KyivG />
+            <Pripyatsky />
+            <Obukhovsky />
+            <Vyshgorodsky />
+            <Buchanskiy />
+            <Fastovsky />
+            <Belotserkovsky />
+            <Boryspilsky />
+            <Brovarsky />
+        </g>
+        {/* ./MAP REGIONS */}
+
+        {/* NAME REGIONS */}
+        <KyivGName />
+        <ObukhovskyName />
+        <VyshgorodskyName />
+        <BuchanskiyName />
+        <FastovskyName />
+        <BelotserkovskyName />
+        <BoryspilskyName />
+        <BrovarskyName />
+        {/* ./NAME REGIONS */}
+
+        {/* NAME GLOBAL REGIONS */}
+        <g
+            strokeLinecap="square"
+            strokeLinejoin="bevel"
+            strokeWidth="1.6113"
+            transform="scale(.999 1.001)"
+            fill="#d4b455"
+            fillOpacity=".93726"
+            opacity=".85"
+            aria-label="Київська">
+            <path d="m2276.6 1133.4h-10.001l-12.296-24.297v24.297h-8.8531v-47.938h8.8531v23.215l12.493-23.215h9.5417l-13.149 23.084z" />
+            <path d="m2288.4 1096.9v16.919q0 3.1478-.7869 10.46l11.87-27.379h10.689v36.527h-8.1318v-17.182q0-3.8691.7541-10.427l-11.902 27.609h-10.591v-36.527z" />
+            <path d="m2326.4 1133.4h-8.722v-36.527h8.722zm-15.083-46.004q0-2.0001 1.1476-3.115 1.1477-1.1148 3.1806-1.1148t3.1806 1.1804q1.1804 1.1476 1.1804 3.0494 0 1.869-1.1804 3.0166-1.1477 1.1477-3.1806 1.1477t-3.1806-1.0821q-1.1476-1.1148-1.1476-3.0822zm13.05 0q0-1.9673 1.1476-3.0822 1.1476-1.1476 3.2134-1.1476 2.0001 0 3.1805 1.1148 1.1805 1.1149 1.1805 3.115 0 1.9346-1.1805 3.0494-1.1476 1.1149-3.1805 1.1149-2.033 0-3.2134-1.1149-1.1476-1.1476-1.1476-3.0494z" />
+            <path d="m2359.9 1106.4q0 3.0822-1.8362 5.1479-1.8034 2.033-5.2791 2.6232v.2623q3.8364.4918 6.0005 2.6559 2.1969 2.1313 2.1969 5.5414 0 5.2464-3.7052 8.0335t-10.591 2.7871h-12.821v-36.527h12.755q13.28 0 13.28 9.4761zm-7.9678 15.706q0-2.328-1.5083-3.3445t-4.5578-1.0165h-3.2789v9.1811h3.4101q5.9349 0 5.9349-4.8201zm-.9509-14.919q0-3.6068-4.7873-3.6068h-3.6068v7.7055h2.6232q2.8854 0 4.3282-.9181 1.4427-.9509 1.4427-3.1806z" />
+            <path d="m2378.4 1134.1q-6.5251 0-9.9352-4.7544-3.4101-4.7545-3.4101-13.968 0-9.6401 3.2134-14.395 3.2461-4.7544 10.001-4.7544 2.0329 0 4.2626.5902t4.0003 1.705l-2.492 6.7874q-2.7215-1.6066-4.8201-1.6066-2.7871 0-4.033 2.9182-1.2133 2.8855-1.2133 8.6892 0 5.6726 1.2133 8.4925 1.2132 2.7871 3.9675 2.7871 3.2789 0 6.853-2.2953v7.6727q-3.4429 2.1313-7.6072 2.1313z" />
+            <path d="m2400 1111.2h3.0822q7.3121 0 10.755 2.656 3.4757 2.6559 3.4757 8.0334 0 11.542-14.493 11.542h-11.542v-36.527h8.7219zm8.3286 10.886q0-2.328-1.41-3.3445-1.3771-1.0165-4.4266-1.0165h-2.492v9.1811h2.6232q2.7215 0 4.197-1.0821 1.5084-1.1148 1.5084-3.738z" />
+            <path d="m2441.1 1096.9h9.181l-10.001 17.313 10.624 19.215h-9.6073l-9.5417-18.788v18.788h-8.722v-36.527h8.722v17.444z" />
+            <path d="m2472.5 1133.4-1.7378-4.984h-.1968q-1.9345 3.2133-4.0003 4.4265-2.0657 1.2132-5.2135 1.2132-4.0331 0-6.3611-3.0166-2.2953-3.0166-2.2953-8.3941 0-5.7709 3.1478-8.558 3.1806-2.8199 9.4761-3.115l4.8529-.1967v-2.6232q0-5.1151-4.4266-5.1151-3.2789 0-7.5416 2.5575l-3.0166-6.0332q5.4431-3.4429 11.837-3.4429 5.8037 0 8.8203 3.3445 3.0494 3.3117 3.0494 9.4106v24.526zm-7.5743-6.1645q2.3936 0 3.8035-2.1313 1.4428-2.1641 1.4428-5.7381v-3.0822l-2.6888.1311q-2.9838.164-4.3937 1.7051-1.3772 1.5411-1.3772 4.5905 0 4.5249 3.2134 4.5249z" />
+        </g>
+        {/* ./NAME GLOBAL REGIONS */}
+    </>
 );
