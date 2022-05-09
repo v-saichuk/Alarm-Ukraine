@@ -21,7 +21,7 @@ export const Rivne = () => {
     const regionRovnensky = useSelectRegion('Рівненська область', 'Рівненський район');
     const regionSarnenskiy = useSelectRegion('Рівненська область', 'Сарненський район');
     const regionDubensky = useSelectRegion('Рівненська область', 'Дубенський район');
-    const { day } = useMinesInfo('Рівненська');
+    const { day, total } = useMinesInfo('Рівненська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -78,7 +78,7 @@ export const Rivne = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={1170} y={760} text={day.covered_territory} />
+            <Mines x={1170} y={760} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

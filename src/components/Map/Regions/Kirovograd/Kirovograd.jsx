@@ -24,7 +24,7 @@ export const Kirovograd = () => {
         'Олександрійський район',
     );
     const regionNovoukrainsky = useSelectRegion('Кіровоградська область', 'Новоукраїнський район');
-    const { day } = useMinesInfo('Кіровоградська');
+    const { day, total } = useMinesInfo('Кіровоградська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -85,7 +85,7 @@ export const Kirovograd = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={2640} y={1815} text={day.covered_territory} />
+            <Mines x={2640} y={1815} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

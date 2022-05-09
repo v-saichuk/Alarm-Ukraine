@@ -27,7 +27,7 @@ export const Kharkov = () => {
     const regionKupyansky = useSelectRegion('Харківська область', 'Куп’янський район');
     const regionChuguevsky = useSelectRegion('Харківська область', 'Чугуївський район');
     const regionKrasnogradsky = useSelectRegion('Харківська область', 'Красноградський район');
-    const { day } = useMinesInfo('Харківська');
+    const { day, total } = useMinesInfo('Харківська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -90,7 +90,7 @@ export const Kharkov = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={3830} y={1370} text={day.covered_territory} />
+            <Mines x={3830} y={1370} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

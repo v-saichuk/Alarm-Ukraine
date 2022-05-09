@@ -6,6 +6,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Zoom from '@material-ui/core/Zoom';
 import { withStyles } from '@material-ui/core/styles';
 
+// Styles
+import './Mines.scss';
+
+// Variables
 const DEFAULT_COLOR = '#fff';
 
 const HtmlTooltip = withStyles(() => ({
@@ -15,21 +19,75 @@ const HtmlTooltip = withStyles(() => ({
     },
 }))(Tooltip);
 
-export const Mines = ({ x, y, text = 0 }) => {
-    const { isActiveMinins } = useSelector((state) => state.settingsStore);
+export const Mines = ({ x, y, day = {}, total = {} }) => {
+    const { isActive, load } = useSelector((state) => state.MinesSlice);
 
-    if (!isActiveMinins) {
-        return null;
-    }
+    if (!load) return null;
+    if (!isActive) return null;
     return (
         <>
             <HtmlTooltip
-                title={`Обстежено територій ${text} (га)`}
+                title={
+                    <div className="mines">
+                        <div className="mines__box">
+                            <div className="mines__header">Обстежено територій (га)</div>
+                            <div className="mines__main">
+                                <div className="mines__content">
+                                    <span className="mines__qty">{day.covered_territory}</span>
+                                    <span className="mines__qty-text">За добу</span>
+                                </div>
+                                <div className="mines__content">
+                                    <span className="mines__qty">{total.covered_territory}</span>
+                                    <span className="mines__qty-text">Усього</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mines__box">
+                            <div className="mines__header">Знешкоджено ВНП (од.)</div>
+                            <div className="mines__main">
+                                <div className="mines__content">
+                                    <span className="mines__qty">{day.vnp}</span>
+                                    <span className="mines__qty-text">За добу</span>
+                                </div>
+                                <div className="mines__content">
+                                    <span className="mines__qty">{total.vnp}</span>
+                                    <span className="mines__qty-text">Усього</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mines__box">
+                            <div className="mines__header">У тому числі авіабомб</div>
+                            <div className="mines__main">
+                                <div className="mines__content">
+                                    <span className="mines__qty">{day.bomb}</span>
+                                    <span className="mines__qty-text">За добу</span>
+                                </div>
+                                <div className="mines__content">
+                                    <span className="mines__qty">{total.bomb}</span>
+                                    <span className="mines__qty-text">Усього</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mines__box">
+                            <div className="mines__header">Кількість залучень</div>
+                            <div className="mines__main">
+                                <div className="mines__content">
+                                    <span className="mines__qty">{day.number_involvement}</span>
+                                    <span className="mines__qty-text">За добу</span>
+                                </div>
+                                <div className="mines__content">
+                                    <span className="mines__qty">{total.number_involvement}</span>
+                                    <span className="mines__qty-text">Усього</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
                 arrow
                 placement="top"
                 TransitionComponent={Zoom}>
                 <text x={x + 90} y={y + 55} fill="#fff" fontSize="50" style={{ cursor: 'pointer' }}>
-                    {text}
+                    {day.covered_territory}
                 </text>
             </HtmlTooltip>
             <svg
@@ -72,3 +130,5 @@ export const Mines = ({ x, y, text = 0 }) => {
         </>
     );
 };
+
+// Обстежено територій ${text} (га)

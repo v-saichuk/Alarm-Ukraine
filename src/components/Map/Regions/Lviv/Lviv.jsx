@@ -27,7 +27,7 @@ export const Lviv = () => {
     const regionZolochevsky = useSelectRegion('Львівська область', 'Золочівський район');
     const regionStriysky = useSelectRegion('Львівська область', 'Стрийський район');
     const regionYavorivsky = useSelectRegion('Львівська область', 'Яворівський район');
-    const { day } = useMinesInfo('Житомирська');
+    const { day, total } = useMinesInfo('Житомирська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -89,7 +89,7 @@ export const Lviv = () => {
             {/* ./NAME GLOBAL GERIONS */}
 
             {/* Mines */}
-            <Mines x={480} y={1280} text={day.covered_territory} />
+            <Mines x={480} y={1280} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

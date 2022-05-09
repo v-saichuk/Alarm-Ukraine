@@ -25,7 +25,7 @@ export const Lugansk = () => {
     const regionSwativsky = useSelectRegion('Луганська область', 'Сватівський район');
     const regionSeverodonetsk = useSelectRegion('Луганська область', 'Сєвєродонецький район');
     const regionShchastynsky = useSelectRegion('Луганська область', 'Щастинський район');
-    const { day } = useMinesInfo('Луганська');
+    const { day, total } = useMinesInfo('Луганська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -89,7 +89,7 @@ export const Lugansk = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={4420} y={1640} text={day.covered_territory} />
+            <Mines x={4420} y={1640} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

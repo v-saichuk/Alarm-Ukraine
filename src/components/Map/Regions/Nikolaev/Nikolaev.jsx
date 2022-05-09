@@ -21,7 +21,7 @@ export const Nikolaev = () => {
     const regionBashtansky = useSelectRegion('Миколаївська область', 'Баштанський район');
     const regionNikolaevsky = useSelectRegion('Миколаївська область', 'Миколаївський район');
     const regionVoznesensky = useSelectRegion('Миколаївська область', 'Вознесенський район');
-    const { day } = useMinesInfo('Миколаївська');
+    const { day, total } = useMinesInfo('Миколаївська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -80,7 +80,7 @@ export const Nikolaev = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={2570} y={2280} text={day.covered_territory} />
+            <Mines x={2570} y={2280} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

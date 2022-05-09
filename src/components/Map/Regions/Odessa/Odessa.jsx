@@ -30,7 +30,7 @@ export const Odessa = () => {
     );
     const regionRazdelnyansky = useSelectRegion('Одеська область', 'Роздільнянський район');
     const regionIzmailsky = useSelectRegion('Одеська область', 'Ізмаїльський район');
-    const { day } = useMinesInfo('Одеська');
+    const { day, total } = useMinesInfo('Одеська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -90,7 +90,7 @@ export const Odessa = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={1990} y={2740} text={day.covered_territory} />
+            <Mines x={1990} y={2740} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

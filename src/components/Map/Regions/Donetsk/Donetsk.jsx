@@ -29,7 +29,7 @@ export const Donetsk = () => {
     const regionDonetskiy = useSelectRegion('Донецька область', 'Донецький район');
     const regionKalmiusskiy = useSelectRegion('Донецька область', 'Кальміуський район');
     const regionGorlevsky = useSelectRegion('Донецька область', 'Горлівський район');
-    const { day } = useMinesInfo('Донецька');
+    const { day, total } = useMinesInfo('Донецька');
     return (
         <>
             {/* MAP REGIONS */}
@@ -92,7 +92,7 @@ export const Donetsk = () => {
             {/* NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={4090} y={2010} text={day.covered_territory} />
+            <Mines x={4090} y={2010} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

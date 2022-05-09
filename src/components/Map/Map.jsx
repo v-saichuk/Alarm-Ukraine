@@ -25,7 +25,6 @@ import { Donetsk } from './Regions/Donetsk/Donetsk';
 import { Crimea } from './Regions/Crimea/Crimea';
 
 import { Location } from '../Location/Location';
-import { Mines } from '../Mines/Mines';
 
 import './Map.scss';
 

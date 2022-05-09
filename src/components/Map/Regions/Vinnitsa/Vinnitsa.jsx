@@ -25,7 +25,7 @@ export const Vinnitsa = () => {
     const regionGaysinsky = useSelectRegion('Вінницька область', 'Гайсинський район');
     const regionTulchinsky = useSelectRegion('Вінницька область', 'Тульчинський район');
     const regionKhmelnitsky = useSelectRegion('Вінницька область', 'Хмільницький район');
-    const { day } = useMinesInfo('Вінницька');
+    const { day, total } = useMinesInfo('Вінницька');
     return (
         <>
             {/* MAP REGIONS */}
@@ -85,7 +85,7 @@ export const Vinnitsa = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={1710} y={1640} text={day.covered_territory} />
+            <Mines x={1710} y={1640} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

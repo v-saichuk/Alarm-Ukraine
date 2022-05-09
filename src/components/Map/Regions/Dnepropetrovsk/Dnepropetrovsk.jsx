@@ -33,7 +33,7 @@ export const Dnepropetrovsk = () => {
     );
     const regionDneprovskiy = useSelectRegion('Дніпропетровська область', 'Дніпровський район');
     const regionNikopolsky = useSelectRegion('Дніпропетровська область', 'Нікопольський район');
-    const { day } = useMinesInfo('Дніпропетровська');
+    const { day, total } = useMinesInfo('Дніпропетровська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -102,7 +102,7 @@ export const Dnepropetrovsk = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={3420} y={1720} text={day.covered_territory} />
+            <Mines x={3420} y={1720} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

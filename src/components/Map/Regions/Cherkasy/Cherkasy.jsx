@@ -21,7 +21,7 @@ export const Cherkasy = () => {
     const regionCherkassky = useSelectRegion('Черкаська область', 'Черкаський район');
     const regionZvenigorodsky = useSelectRegion('Черкаська область', 'Звенигородський район');
     const regionZolotonisky = useSelectRegion('Черкаська область', 'Золотоніський район');
-    const { day } = useMinesInfo('Черкаська');
+    const { day, total } = useMinesInfo('Черкаська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -77,7 +77,7 @@ export const Cherkasy = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={2330} y={1550} text={day.covered_territory} />
+            <Mines x={2330} y={1550} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

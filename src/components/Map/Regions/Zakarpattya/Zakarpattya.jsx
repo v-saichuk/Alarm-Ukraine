@@ -25,7 +25,7 @@ export const Zakarpattya = () => {
     const regionKhustskiy = useSelectRegion('Закарпатська область', 'Хустський район');
     const regionRakhovsky = useSelectRegion('Закарпатська область', 'Рахівський район');
     const regionMukachevskiy = useSelectRegion('Закарпатська область', 'Мукачівський район');
-    const { day } = useMinesInfo('Закарпатська');
+    const { day, total } = useMinesInfo('Закарпатська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -88,7 +88,7 @@ export const Zakarpattya = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={300} y={1750} text={day.covered_territory} />
+            <Mines x={300} y={1750} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

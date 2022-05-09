@@ -23,7 +23,7 @@ export const Summy = () => {
     const regionShostkinsky = useSelectRegion('Сумська область', 'Шосткинський район');
     const regionAkhtyrsky = useSelectRegion('Сумська область', 'Охтирський район');
     const regionKonotopskiy = useSelectRegion('Сумська область', 'Конотопський район');
-    const { day } = useMinesInfo('Сумська');
+    const { day, total } = useMinesInfo('Сумська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -80,7 +80,7 @@ export const Summy = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={3160} y={780} text={day.covered_territory} />
+            <Mines x={3160} y={780} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

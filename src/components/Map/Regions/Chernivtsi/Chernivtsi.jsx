@@ -19,7 +19,7 @@ export const Chernivtsi = () => {
     const regionVizhnitsky = useSelectRegion('Чернівецька область', 'Вижницький район');
     const regionChernivetsky = useSelectRegion('Чернівецька область', 'Чернівецький район');
     const regionDniester = useSelectRegion('Чернівецька область', 'Дністровський район');
-    const { day } = useMinesInfo('Чернівецька');
+    const { day, total } = useMinesInfo('Чернівецька');
     return (
         <>
             {/* MAP REGIONS */}
@@ -75,7 +75,7 @@ export const Chernivtsi = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={950} y={1890} text={day.covered_territory} />
+            <Mines x={950} y={1890} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

@@ -31,7 +31,7 @@ export const IvanoFrankivsk = () => {
     );
     const regionKolomoisky = useSelectRegion('Івано-Франківська область', 'Коломийський район');
     const regionKosivsky = useSelectRegion('Івано-Франківська область', 'Косівський район');
-    const { day } = useMinesInfo('Івано-Франківська');
+    const { day, total } = useMinesInfo('Івано-Франківська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -99,7 +99,7 @@ export const IvanoFrankivsk = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={700} y={1780} text={day.covered_territory} />
+            <Mines x={700} y={1780} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

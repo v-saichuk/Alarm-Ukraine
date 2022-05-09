@@ -21,7 +21,7 @@ export const Poltava = () => {
     const regionMirgorodsky = useSelectRegion('Полтавська область', 'Миргородський район');
     const regionKremenchuksky = useSelectRegion('Полтавська область', 'Кременчуцький район');
     const regionLubensky = useSelectRegion('Полтавська область', 'Лубенський район');
-    const { day } = useMinesInfo('Полтавська');
+    const { day, total } = useMinesInfo('Полтавська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -78,7 +78,7 @@ export const Poltava = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={3080} y={1310} text={day.covered_territory} />
+            <Mines x={3080} y={1310} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

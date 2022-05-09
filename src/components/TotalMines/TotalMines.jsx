@@ -8,14 +8,15 @@ import cn from 'classnames';
 import './TotalMines.scss';
 
 export const TotalMines = () => {
-    const { isActiveMinins, isActiveFullScreen } = useSelector((state) => state.settingsStore);
-    const { total } = useSelector((state) => state.MinesSlice.mines);
+    const { isActiveFullScreen } = useSelector((state) => state.settingsStore);
+    const { mines, isActive, load } = useSelector((state) => state.MinesSlice);
+    if (!load) return null;
 
     return (
         <div
             className={cn(
                 'totalmines',
-                { totalmines__hidden: !isActiveMinins },
+                { totalmines__hidden: !isActive },
                 { totalmines__hidden: isActiveFullScreen },
             )}>
             {/* --- */}
@@ -64,12 +65,14 @@ export const TotalMines = () => {
                     </div>
                     <div className="totalmines__main">
                         <div className="totalmines__main-box">
-                            <h4 className="totalmines__quantity">{total.day.covered_territory}</h4>
+                            <h4 className="totalmines__quantity">
+                                {mines.total.day.covered_territory}
+                            </h4>
                             <span className="totalmines__quantity-title">За добу</span>
                         </div>
                         <div className="totalmines__main-box">
                             <h4 className="totalmines__quantity">
-                                {total.total.covered_territory}
+                                {mines.total.total.covered_territory}
                             </h4>
                             <span className="totalmines__quantity-title">Усього</span>
                         </div>
@@ -98,11 +101,11 @@ export const TotalMines = () => {
                     </div>
                     <div className="totalmines__main">
                         <div className="totalmines__main-box">
-                            <h4 className="totalmines__quantity">{total.day.vnp}</h4>
+                            <h4 className="totalmines__quantity">{mines.total.day.vnp}</h4>
                             <span className="totalmines__quantity-title">За добу</span>
                         </div>
                         <div className="totalmines__main-box">
-                            <h4 className="totalmines__quantity">{total.total.vnp}</h4>
+                            <h4 className="totalmines__quantity">{mines.total.total.vnp}</h4>
                             <span className="totalmines__quantity-title">Усього</span>
                         </div>
                     </div>
@@ -130,11 +133,11 @@ export const TotalMines = () => {
                     </div>
                     <div className="totalmines__main">
                         <div className="totalmines__main-box">
-                            <h4 className="totalmines__quantity">{total.day.bomb}</h4>
+                            <h4 className="totalmines__quantity">{mines.total.day.bomb}</h4>
                             <span className="totalmines__quantity-title">За добу</span>
                         </div>
                         <div className="totalmines__main-box">
-                            <h4 className="totalmines__quantity">{total.total.bomb}</h4>
+                            <h4 className="totalmines__quantity">{mines.total.total.bomb}</h4>
                             <span className="totalmines__quantity-title">Усього</span>
                         </div>
                     </div>
@@ -166,12 +169,14 @@ export const TotalMines = () => {
                     </div>
                     <div className="totalmines__main">
                         <div className="totalmines__main-box">
-                            <h4 className="totalmines__quantity">{total.day.number_involvement}</h4>
+                            <h4 className="totalmines__quantity">
+                                {mines.total.day.number_involvement}
+                            </h4>
                             <span className="totalmines__quantity-title">За добу</span>
                         </div>
                         <div className="totalmines__main-box">
                             <h4 className="totalmines__quantity">
-                                {total.total.number_involvement}
+                                {mines.total.total.number_involvement}
                             </h4>
                             <span className="totalmines__quantity-title">Усього</span>
                         </div>

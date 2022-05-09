@@ -23,7 +23,7 @@ export const Zaporozhye = () => {
     const regionPologovsky = useSelectRegion('Запорізька область', 'Пологівський район');
     const regionVasilevsky = useSelectRegion('Запорізька область', 'Василівський район');
     const regionMelitopolskiy = useSelectRegion('Запорізька область', 'Мелітопольський район');
-    const { day } = useMinesInfo('Запорізька');
+    const { day, total } = useMinesInfo('Запорізька');
     return (
         <>
             {/* MAP REGIONS */}
@@ -82,7 +82,7 @@ export const Zaporozhye = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={3600} y={2330} text={day.covered_territory} />
+            <Mines x={3600} y={2330} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

@@ -22,7 +22,7 @@ export const Khmelnitsk = () => {
         'Хмельницька область',
         'Кам’янець-Подільський район',
     );
-    const { day } = useMinesInfo('Хмельницька');
+    const { day, total } = useMinesInfo('Хмельницька');
 
     return (
         <>
@@ -79,7 +79,7 @@ export const Khmelnitsk = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={1270} y={1360} text={day.covered_territory} />
+            <Mines x={1270} y={1360} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

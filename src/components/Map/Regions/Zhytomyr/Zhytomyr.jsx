@@ -24,7 +24,7 @@ export const Zhytomyr = () => {
         'Новоград-Волинський район',
     );
     const regionKorostensky = useSelectRegion('Житомирська область', 'Коростенський район');
-    const { day } = useMinesInfo('Житомирська');
+    const { day, total } = useMinesInfo('Житомирська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -82,7 +82,7 @@ export const Zhytomyr = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={1650} y={970} text={day.covered_territory} />
+            <Mines x={1650} y={970} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

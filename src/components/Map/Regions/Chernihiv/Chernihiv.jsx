@@ -26,7 +26,7 @@ export const Chernihiv = () => {
         'Новгород-Сіверський район',
     );
     const regionKoryukovsky = useSelectRegion('Чернігівська область', 'Корюківський район');
-    const { day } = useMinesInfo('Чернігівська');
+    const { day, total } = useMinesInfo('Чернігівська');
 
     return (
         <>
@@ -88,7 +88,7 @@ export const Chernihiv = () => {
             {/* ./NAME GLOBAL REGION */}
 
             {/* Mines */}
-            <Mines x={2570} y={650} text={day.covered_territory} />
+            <Mines x={2570} y={650} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

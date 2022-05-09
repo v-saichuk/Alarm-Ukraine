@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { alarmFetch } from '../store/slice/RegionsSlice';
-import { minesFetch } from '../store/slice/MinesSlice';
 
 // COMPONENTS
 import { Loader } from './Loader/Loader';
@@ -19,7 +18,6 @@ export const Container = () => {
 
     useEffect(() => {
         dispatch(alarmFetch());
-        dispatch(minesFetch());
     }, []);
 
     return (

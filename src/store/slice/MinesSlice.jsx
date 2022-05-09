@@ -12,6 +12,10 @@ export const minesFetch = createAsyncThunk('mines/minesFetch', async (_, { rejec
 });
 
 const initialState = {
+    isActive: false,
+    isLoading: false,
+    load: false,
+    error: false,
     mines: {
         regions: [
             {
@@ -481,27 +485,35 @@ const initialState = {
             },
         },
     },
-    isLoading: false,
-    error: false,
 };
 
 const MinesSlice = createSlice({
     name: 'mines',
     initialState,
+    reducers: {
+        handleMinins: (state, action) => {
+            state.isActive = action.payload;
+        },
+    },
     extraReducers: {
         [minesFetch.pending]: (state) => {
             state.isLoading = true;
             state.error = false;
+            state.load = false;
         },
         [minesFetch.fulfilled]: (state, action) => {
             state.mines = action.payload;
             state.isLoading = false;
+            state.load = true;
         },
         [minesFetch.rejected]: (state) => {
             state.isLoading = false;
             state.error = true;
+            state.load = false;
         },
     },
 });
 
 export default MinesSlice.reducer;
+
+export const { handleMinins } = MinesSlice.actions;

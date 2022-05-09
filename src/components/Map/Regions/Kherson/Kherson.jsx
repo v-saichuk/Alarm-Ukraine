@@ -23,7 +23,7 @@ export const Kherson = () => {
     const regionSkadovsky = useSelectRegion('Херсонська область', 'Скадовський район');
     const regionKhersonskiy = useSelectRegion('Херсонська область', 'Херсонський район');
     const regionGenichesk = useSelectRegion('Херсонська область', 'Генічеський район');
-    const { day } = useMinesInfo('Херсонська');
+    const { day, total } = useMinesInfo('Херсонська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -82,7 +82,7 @@ export const Kherson = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={3000} y={2580} text={day.covered_territory} />
+            <Mines x={3000} y={2580} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

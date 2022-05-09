@@ -24,7 +24,7 @@ export const Volyn = () => {
         'Володимир-Волинський район',
     );
     const regionKamenKashirskiy = useSelectRegion('Волинська область', 'Камінь-Каширський район');
-    const { day } = useMinesInfo('Волинська');
+    const { day, total } = useMinesInfo('Волинська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -80,7 +80,7 @@ export const Volyn = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={720} y={730} text={day.covered_territory} />
+            <Mines x={720} y={730} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

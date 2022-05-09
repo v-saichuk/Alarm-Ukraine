@@ -19,7 +19,7 @@ export const Ternopil = () => {
     const regionTernopilsky = useSelectRegion('Тернопільська область', 'Тернопільський район');
     const regionChortkivsky = useSelectRegion('Тернопільська область', 'Чортківський район');
     const regionKremenets = useSelectRegion('Тернопільська область', 'Кременецький район');
-    const { day } = useMinesInfo('Тернопільська');
+    const { day, total } = useMinesInfo('Тернопільська');
     return (
         <>
             {/* MAP REGIONS */}
@@ -77,7 +77,7 @@ export const Ternopil = () => {
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={890} y={1430} text={day.covered_territory} />
+            <Mines x={890} y={1430} day={day} total={total} />
             {/* ./Mines */}
         </>
     );
