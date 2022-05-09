@@ -1,19 +1,42 @@
+// MODULES
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { alarmFetch } from '../store/slice/RegionsSlice';
+import { minesFetch } from '../store/slice/MinesSlice';
+
+// COMPONENTS
+import { Loader } from './Loader/Loader';
+import { Header } from '../components/Header/Header';
 import { Map } from './Map/Map';
+import { TotalMines } from '../components/TotalMines/TotalMines';
+import { Information } from './Information/Information';
+import { Footer } from '../components/Footer/Footer';
 
 export const Container = () => {
+    const dispatch = useDispatch();
+
+    const { isLoading } = useSelector((state) => state.alarmStore);
+
+    useEffect(() => {
+        dispatch(alarmFetch());
+        dispatch(minesFetch());
+    }, []);
+
     return (
         <>
-            <header>Hello</header>
+            {isLoading && <Loader />}
+
+            <Header />
+
             <main>
                 <Map />
+                <TotalMines />
+                <Information />
             </main>
-            <footer>Footer</footer>
+            <Footer />
         </>
     );
 };
-
-// Разменировано за сутки
-// https://dsns.gov.ua/api/demining?region=19
 
 // Домен для сайта
 // alarm-ua.info

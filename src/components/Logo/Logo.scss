@@ -1,0 +1,15 @@
+.logo {
+    transition: 1s;
+
+    &__hidden {
+        transform: translateX(-200px);
+    }
+
+    &__blue {
+        color: rgb(0, 132, 255)
+    }
+
+    &__yellow {
+        color: yellow;
+    }
+}

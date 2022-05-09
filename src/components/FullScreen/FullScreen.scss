@@ -1,0 +1,16 @@
+.fullscreen {
+
+    &__btn {
+
+        &:hover .fullscreen__icon {
+            transform: scale(1.1) !important;
+        }
+    }
+
+    &__icon {
+        font-size: 30px !important;
+        color: #ccc !important;
+        transition: 0.3s !important;
+
+    }
+}

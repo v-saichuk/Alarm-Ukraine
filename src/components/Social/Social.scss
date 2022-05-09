@@ -1,0 +1,49 @@
+.social {
+    margin-bottom: 10px;
+
+    &__wraper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+
+    &__btn {
+        min-width: auto !important;
+        padding: 7px !important;
+        width: 100% !important;
+        color: #fff !important;
+
+        &--fb {
+            background-color: #4267b2 !important;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &--tg {
+            background-color: #29acee !important;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &--in {
+            background-color: #0c66c2 !important;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &--tw {
+            background-color: #216ced !important;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+    }
+}

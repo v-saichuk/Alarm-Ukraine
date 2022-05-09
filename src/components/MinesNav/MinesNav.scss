@@ -1,0 +1,13 @@
+.minesNav {
+
+    &__btn {
+
+        &:hover .minesNav__icon {
+            transform: scale(1.1) !important;
+        }
+    }
+
+    &__icon {
+        transition: 0.3s;
+    }
+}
