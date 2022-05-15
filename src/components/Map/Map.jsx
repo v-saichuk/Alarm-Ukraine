@@ -96,7 +96,7 @@ export const Map = () => {
                 y="2420"
                 text={
                     <span>
-                        Чорнобаївка <strong className="location__text-center"> 🔥 18.0 </strong>
+                        Чорнобаївка <strong className="location__text-center"> 🔥 20.0 </strong>
                     </span>
                 }
             />

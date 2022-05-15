@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
     isLoading: false,
+    isActive: false,
     regions: {
         'Вінницька область': {
             enabled: false,
@@ -517,6 +518,11 @@ export const alarmFetch = createAsyncThunk('regions/alarmFetch', async (_, { rej
 const RegionsSlice = createSlice({
     name: 'regions',
     initialState,
+    reducers: {
+        onActive: (state, action) => {
+            state.isActive = action.payload;
+        },
+    },
     extraReducers: {
         [alarmFetch.pending]: (state, action) => {
             state.isLoading = true;
@@ -533,3 +539,4 @@ const RegionsSlice = createSlice({
 });
 
 export default RegionsSlice.reducer;
+export const { onActive } = RegionsSlice.actions;
