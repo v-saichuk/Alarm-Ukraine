@@ -4,15 +4,13 @@
     position: absolute;
     right: 10px;
     top: 80px;
-    max-height: 400px;
+    max-height: 355px;
     overflow-y: scroll;
-    transition: 1s;
-    transform: translateX(300px);
-
-
+    transition: .7s;
+    opacity: 0;
 
     &--active {
-        transform: translateX(0);
+        opacity: 1;
     }
 
     &__wrapper {

@@ -13,7 +13,21 @@ export const AlarmBlock = () => {
     const { isActive, regions, activeRegions } = useSelector((state) => state.alarmStore);
 
     useEffect(() => {
-        dispatch(addedActiveRegions(Object.entries(regions).filter((el) => el[1].enabled)));
+        dispatch(
+            addedActiveRegions(
+                Object.entries(regions).filter((el) => {
+                    if (el[1].enabled) {
+                        return el;
+                    } else {
+                        for (const key in el[1].districts) {
+                            if (el[1].districts[key].enabled) {
+                                return el[1].districts;
+                            }
+                        }
+                    }
+                }),
+            ),
+        );
     }, [regions, dispatch]);
 
     return (
