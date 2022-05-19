@@ -27,7 +27,7 @@ export const MinesNav = () => {
                 onClick={() => handleFeatchMines()}
                 className="minesNav__btn"
                 aria-label="Mines">
-                {isLoading && <span class="min-loader"></span>}
+                {isLoading && <span className="min-loader"></span>}
                 <svg
                     className="minesNav__icon"
                     width="27"

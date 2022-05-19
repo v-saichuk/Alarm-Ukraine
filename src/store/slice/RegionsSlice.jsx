@@ -494,6 +494,7 @@ const initialState = {
             enabled: false,
         },
     },
+    activeRegions: [],
 };
 
 export const alarmFetch = createAsyncThunk('regions/alarmFetch', async (_, { rejectWithValue }) => {
@@ -508,7 +509,7 @@ export const alarmFetch = createAsyncThunk('regions/alarmFetch', async (_, { rej
             },
         );
         const { states } = await response.json();
-        console.log(states);
+        console.log('RegionSlice.jsx', states);
         return states;
     } catch (e) {
         return rejectWithValue(e);
@@ -522,9 +523,12 @@ const RegionsSlice = createSlice({
         onActive: (state, action) => {
             state.isActive = action.payload;
         },
+        addedActiveRegions: (state, action) => {
+            state.activeRegions = action.payload;
+        },
     },
     extraReducers: {
-        [alarmFetch.pending]: (state, action) => {
+        [alarmFetch.pending]: (state) => {
             state.isLoading = true;
         },
         [alarmFetch.fulfilled]: (state, action) => {
@@ -539,4 +543,4 @@ const RegionsSlice = createSlice({
 });
 
 export default RegionsSlice.reducer;
-export const { onActive } = RegionsSlice.actions;
+export const { onActive, addedActiveRegions } = RegionsSlice.actions;

@@ -10,14 +10,16 @@ import './AlarmNav.scss';
 
 export const AlarmNav = () => {
     const dispatch = useDispatch();
-    const { isActive } = useSelector((state) => state.alarmStore);
-
+    const { isActive, activeRegions } = useSelector((state) => state.alarmStore);
     return (
         <IconButton
             className="alarm-nav__btn"
             aria-label="AlarmNav"
             onClick={() => dispatch(onActive(!isActive))}>
-            <Badge badgeContent={4} color="error">
+            <Badge
+                badgeContent={activeRegions.length}
+                showZero={!!activeRegions.length}
+                color="error">
                 <NotificationImportantIcon
                     className={cn('alarm-nav__icon', { 'alarm-nav--active': isActive })}
                 />

@@ -7,7 +7,6 @@
         }
     }
 
-
     &__icon {
         font-size: 30px !important;
         color: #ccc !important;
@@ -15,4 +14,12 @@
 
     }
 
+    &--active {
+        color: #575757 !important;
+    }
+
+}
+
+.MuiBadge-badge {
+    font-size: 12px !important;
 }
