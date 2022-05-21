@@ -10,7 +10,8 @@ import { Map } from './Map/Map';
 import { TotalMines } from '../components/TotalMines/TotalMines';
 import { Information } from './Information/Information';
 import { Footer } from '../components/Footer/Footer';
-import { AlarmBlock } from './AlarmText/AlarmBlock/AlarmBlock';
+import { AlarmBlock } from './Alarm/AlarmBlock/AlarmBlock';
+import { WarsDay } from './WarsDay/WarsDay';
 
 export const Container = () => {
     const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export const Container = () => {
 
             <main>
                 <Map />
+                <WarsDay />
                 <TotalMines />
                 <AlarmBlock />
                 <Information />

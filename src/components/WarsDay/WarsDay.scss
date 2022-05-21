@@ -1,0 +1,19 @@
+.wars-day {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 5px 45px 5px 20px;
+    font-size: 14px;
+    background: linear-gradient(90deg, #d1463b, transparent);
+    transition: 1s;
+    display: flex;
+    align-items: center;
+
+    &>svg {
+        margin-right: 5px;
+    }
+
+    &--hidden {
+        transform: translateX(-200px);
+    }
+}

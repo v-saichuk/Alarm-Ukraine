@@ -11,6 +11,7 @@ import './AlarmBlock.scss';
 export const AlarmBlock = () => {
     const dispatch = useDispatch();
     const { isActive, regions, activeRegions } = useSelector((state) => state.alarmStore);
+    const { isActiveFullScreen } = useSelector((state) => state.settingsStore);
 
     useEffect(() => {
         dispatch(
@@ -31,7 +32,10 @@ export const AlarmBlock = () => {
     }, [regions, dispatch]);
 
     return (
-        <div className={cn('alarm-block', { 'alarm-block--active': !isActive })}>
+        <div
+            className={cn('alarm-block', {
+                'alarm-block--active': !isActive && !isActiveFullScreen,
+            })}>
             {activeRegions.map((item) => {
                 const { hour, minute } = lengthInterval(new Date(item[1].enabled_at), new Date());
 
