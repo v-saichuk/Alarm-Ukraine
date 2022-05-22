@@ -16,6 +16,7 @@ import {
 } from '../../../../variables';
 import { Mines } from '../../../Mines/Mines';
 import { useMinesInfo } from '../../../../hooks/useMinesInfo';
+import { Text } from '../../../Text/Text';
 
 export const Vinnitsa = () => {
     const regionVinitsa = useSelectRegion('Вінницька область');
@@ -54,38 +55,20 @@ export const Vinnitsa = () => {
             {/* ./MAP REGIONS */}
 
             {/* NAME REGIONS */}
-            {regionVinitsky && <VinitskyName />}
-            {regionKhmelnitsky && <KhmelnitskyName />}
-            {regionZhmerinsky && <ZhmerinskyName />}
-            {regionMogilevPodolsk && <MogilevPodolskName />}
-            {regionTulchinsky && <TulchinskyName />}
-            {regionGaysinsky && <GaysinskyName />}
+            {!regionVinitsa && regionVinitsky && <VinitskyName />}
+            {!regionVinitsa && regionKhmelnitsky && <KhmelnitskyName />}
+            {!regionVinitsa && regionZhmerinsky && <ZhmerinskyName />}
+            {!regionVinitsa && regionMogilevPodolsk && <MogilevPodolskName />}
+            {!regionVinitsa && regionTulchinsky && <TulchinskyName />}
+            {!regionVinitsa && regionGaysinsky && <GaysinskyName />}
             {/* ./NAME REGIONS */}
 
             {/* NAME GLOBAL REGIONS */}
-            <g
-                strokeLinecap="square"
-                strokeLinejoin="bevel"
-                strokeWidth="1.6113"
-                transform="scale(.999 1.001)"
-                fill={regionVinitsa ? '#fff' : BLUE}
-                fillOpacity=".87843"
-                opacity=".85"
-                aria-label="Вінницька">
-                <path d="m1692.3 1561.4h12.23q7.476 0 10.886 2.9182 3.4101 2.8855 3.4101 9.2138 0 4.1643-1.8034 6.9842-1.8035 2.7871-4.9185 3.3773v.3279q4.0659 1.0165 5.8694 3.8036 1.8034 2.7871 1.8034 7.4104 0 6.5251-3.5085 10.23-3.4757 3.6724-9.5417 3.6724h-14.427zm8.3941 19.28h4.0987q2.8199 0 3.9675-1.5083 1.1477-1.5083 1.1477-4.4921 0-2.9839-1.3116-4.2627-1.3116-1.3115-4.1315-1.3115h-3.7708zm0 7.4432v13.411h4.4922q2.7871 0 4.1314-1.7051 1.3772-1.705 1.3772-5.279 0-6.4268-5.6398-6.4268z" />
-                <path d="m1734.6 1609.4h-8.722v-36.527h8.722zm-9.0827-46.069q0-2.1641 1.246-3.4101 1.2788-1.2788 3.5413-1.2788 2.1313 0 3.4101 1.2788 1.2788 1.246 1.2788 3.4101 0 2.2296-1.3116 3.4756-1.3116 1.2132-3.3773 1.2132-2.1641 0-3.4757-1.2132-1.3116-1.246-1.3116-3.4756z" />
-                <path d="m1750.8 1572.9v14.231h9.8697v-14.231h8.7875v36.527h-8.7875v-15.313h-9.8697v15.313h-8.7219v-36.527z" />
-                <path d="m1785.5 1572.9v14.231h9.8696v-14.231h8.7876v36.527h-8.7876v-15.313h-9.8696v15.313h-8.7219v-36.527z" />
-                <path d="m1819.6 1572.9v16.919q0 3.1478-.7869 10.46l11.87-27.379h10.689v36.527h-8.1318v-17.182q0-3.8691.7542-10.427l-11.903 27.609h-10.591v-36.527z" />
-                <path d="m1876.1 1602.5h4.9184v19.87h-8.6892v-13.017h-23.543v-36.527h8.722v29.478h9.804v-29.478h8.7876z" />
-                <path d="m1894.2 1587.1h3.0822q7.312 0 10.755 2.6559 3.4757 2.6559 3.4757 8.0334 0 11.542-14.493 11.542h-11.542v-36.527h8.722zm8.3285 10.886q0-2.328-1.4099-3.3445-1.3772-1.0165-4.4266-1.0165h-2.492v9.1811h2.6231q2.7216 0 4.1971-1.0821 1.5083-1.1148 1.5083-3.738z" />
-                <path d="m1935.3 1572.9h9.1811l-10.001 17.313 10.624 19.215h-9.6073l-9.5417-18.788v18.788h-8.722v-36.527h8.722v17.444z" />
-                <path d="m1966.8 1609.4-1.7379-4.984h-.1967q-1.9346 3.2133-4.0003 4.4266-2.0657 1.2132-5.2135 1.2132-4.0331 0-6.3612-3.0167-2.2952-3.0166-2.2952-8.3941 0-5.7709 3.1478-8.558 3.1805-2.8199 9.4761-3.115l4.8528-.1967v-2.6232q0-5.1151-4.4265-5.1151-3.279 0-7.5416 2.5576l-3.0166-6.0333q5.443-3.4429 11.837-3.4429 5.8038 0 8.8204 3.3445 3.0494 3.3118 3.0494 9.4106v24.526zm-7.5744-6.1644q2.3937 0 3.8036-2.1313 1.4427-2.1641 1.4427-5.7382v-3.0822l-2.6887.1312q-2.9838.1639-4.3938 1.705-1.3771 1.5411-1.3771 4.5905 0 4.525 3.2133 4.525z" />
-            </g>
+            <Text title={'Вінницька'} fill={regionVinitsa ? '#fff' : BLUE} x="1690" y="1610" />
             {/* ./NAME GLOBAL REGIONS */}
 
             {/* Mines */}
-            <Mines x={1710} y={1640} day={day} total={total} />
+            <Mines x={1720} y={1630} day={day} total={total} />
             {/* ./Mines */}
         </>
     );

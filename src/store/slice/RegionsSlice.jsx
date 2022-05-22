@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-    isLoading: false,
+    isLoading: true,
     isActive: false,
     regions: {
         'Вінницька область': {
@@ -528,9 +528,7 @@ const RegionsSlice = createSlice({
         },
     },
     extraReducers: {
-        [alarmFetch.pending]: (state) => {
-            state.isLoading = true;
-        },
+        [alarmFetch.pending]: (state, action) => {},
         [alarmFetch.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.regions = action.payload;

@@ -62,8 +62,8 @@ export const Map = () => {
                 <Donetsk />
                 <Crimea />
             </g>
-
             {/* === МЕТКИ === */}
+
             {/* о. Змеиный */}
             <Location
                 x="2250"

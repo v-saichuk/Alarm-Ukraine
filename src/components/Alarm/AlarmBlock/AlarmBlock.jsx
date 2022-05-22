@@ -13,6 +13,8 @@ export const AlarmBlock = () => {
     const { isActive, regions, activeRegions } = useSelector((state) => state.alarmStore);
     const { isActiveFullScreen } = useSelector((state) => state.settingsStore);
 
+    // TODO: Не отображаются регионы
+
     useEffect(() => {
         dispatch(
             addedActiveRegions(

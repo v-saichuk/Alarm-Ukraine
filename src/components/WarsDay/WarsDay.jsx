@@ -5,7 +5,7 @@ import './WarsDay.scss';
 export const WarsDay = () => {
     const { isActiveFullScreen } = useSelector((state) => state.settingsStore);
 
-    const date1 = new Date('2/23/2022');
+    const date1 = new Date('2/24/2022');
     const date2 = new Date();
 
     const oneDay = 1000 * 60 * 60 * 24;
