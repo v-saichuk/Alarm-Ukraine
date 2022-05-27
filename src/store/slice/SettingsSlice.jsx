@@ -4,13 +4,18 @@ const SettingsSlice = createSlice({
     name: 'settings',
     initialState: {
         isActiveFullScreen: false,
+        themeColor: true, // Black = true, White = false
     },
     reducers: {
-        handleFullScreen: (state, action) => {
-            state.isActiveFullScreen = action.payload;
+        handleFullScreen: (state) => {
+            state.isActiveFullScreen = !state.isActiveFullScreen;
+        },
+        onThemeColor: (state) => {
+            state.themeColor = !state.themeColor;
+            console.log('click');
         },
     },
 });
 
 export default SettingsSlice.reducer;
-export const { handleFullScreen } = SettingsSlice.actions;
+export const { handleFullScreen, onThemeColor } = SettingsSlice.actions;

@@ -524,7 +524,7 @@ const RegionsSlice = createSlice({
             state.isActive = action.payload;
         },
         addedActiveRegions: (state, action) => {
-            state.activeRegions = action.payload;
+            state.activeRegions.push(action.payload);
         },
     },
     extraReducers: {

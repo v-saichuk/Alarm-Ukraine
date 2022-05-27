@@ -11,3 +11,6 @@ export const REGION_STROKE = '#212121';
 // Район
 export const DISTRICT_STROKE_WIDTH = 0.5;
 export const DISTRICT_STROKE = '#808080';
+
+// THEME WHITE
+export const DEFAULT_COLOR_WHITE = '#e2fdfc';

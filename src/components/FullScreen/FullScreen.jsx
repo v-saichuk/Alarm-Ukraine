@@ -19,7 +19,7 @@ export const FullScreen = () => {
             <IconButton
                 className="fullscreen__btn"
                 aria-label="Settings"
-                onClick={() => dispatch(handleFullScreen(!isActiveFullScreen))}>
+                onClick={() => dispatch(handleFullScreen())}>
                 {isActiveFullScreen ? (
                     <FullscreenExitIcon className="fullscreen__icon" />
                 ) : (

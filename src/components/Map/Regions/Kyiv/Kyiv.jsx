@@ -37,8 +37,11 @@ export const Kyiv = () => {
     const { day, total } = useMinesInfo('Київська');
 
     return (
-        <>
+        <g>
             {/* MAP REGIONS */}
+            <g stroke={DISTRICT_STROKE} fillOpacity="1" strokeWidth={DISTRICT_STROKE_WIDTH}>
+                <KyivG color={useRegionColor(regionKyivG)} />
+            </g>
             <g
                 fill={useRegionColor(regionKyiv)}
                 stroke={DISTRICT_STROKE}
@@ -80,6 +83,6 @@ export const Kyiv = () => {
             <Text title="Київська" fill={regionKyiv ? '#fff' : BLUE} x="2230" y="1130" />
             {/* ./NAME GLOBAL REGIONS */}
             <Mines x={2240} y={1150} day={day} total={total} />
-        </>
+        </g>
     );
 };

@@ -18,6 +18,14 @@
         color: #575757 !important;
     }
 
+    &__icon-dark {
+        color: #333 !important;
+    }
+
+    &__icon-dark--active {
+        color: #ccc !important;
+    }
+
 }
 
 .MuiBadge-badge {

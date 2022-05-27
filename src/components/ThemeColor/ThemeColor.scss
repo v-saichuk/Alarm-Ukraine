@@ -1,0 +1,19 @@
+.theme-color {
+
+    &__btn {
+        transition: 0.5s !important;
+
+        &:hover {
+            transform: rotate(45deg) !important;
+        }
+    }
+
+    &__icon {
+        font-size: 30px !important;
+        color: #ccc !important;
+
+        &--dark {
+            color: #333 !important;
+        }
+    }
+}

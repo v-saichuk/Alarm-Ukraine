@@ -18,6 +18,11 @@
         padding: 15px;
         background-color: #8080800d;
         border-radius: 5px;
+
+        &--white {
+            background-color: #f8f8f8;
+            color: #232323;
+        }
     }
 
     &__list {

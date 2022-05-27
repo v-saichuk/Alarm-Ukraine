@@ -16,21 +16,25 @@ export const AlarmBlock = () => {
     // TODO: Не отображаются регионы
 
     useEffect(() => {
-        dispatch(
-            addedActiveRegions(
-                Object.entries(regions).filter((el) => {
-                    if (el[1].enabled) {
-                        return el;
-                    } else {
-                        for (const key in el[1].districts) {
-                            if (el[1].districts[key].enabled) {
-                                return el[1].districts;
-                            }
-                        }
-                    }
-                }),
-            ),
-        );
+        Object.entries(regions).filter((el) => {
+            if (el[1].enabled) {
+                console.log('=>>>>>>>>>', el);
+                dispatch(addedActiveRegions(el));
+            } else {
+                // el[1].districts &&
+                //     Object.entries(el[1].districts).filter((elm) => {
+                //         // console.log(elm);
+                //         elm[1].enabled && dispatch(addedActiveRegions(elm));
+                //     });
+            }
+        });
+
+        // for (const key in regions) {
+        //     if (regions[key].enabled) {
+        //         // console.log(regions[key]);
+        //         // console.log(activeRegions.filter((el) => el[0] === regions[key]));
+        //     }
+        // }
     }, [regions, dispatch]);
 
     return (

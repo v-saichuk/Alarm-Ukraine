@@ -9,7 +9,9 @@ import { Social } from '../Social/Social';
 import './Information.scss';
 
 export const Information = () => {
-    const { isActiveFullScreen } = reactRedux.useSelector((state) => state.settingsStore);
+    const { isActiveFullScreen, themeColor } = reactRedux.useSelector(
+        (state) => state.settingsStore,
+    );
 
     return (
         <div className="information">
@@ -18,7 +20,10 @@ export const Information = () => {
                     information__container__hidden: isActiveFullScreen,
                 })}>
                 <Social />
-                <div className="information__wrapper">
+                <div
+                    className={cn('information__wrapper', {
+                        'information__wrapper--white': !themeColor,
+                    })}>
                     <ul className="information__list">
                         <li className="information__item">
                             <span className="information__color information__alarm"></span>
