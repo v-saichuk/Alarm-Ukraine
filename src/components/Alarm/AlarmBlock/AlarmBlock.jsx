@@ -4,7 +4,7 @@ import cn from 'classnames';
 import NotificationsActiveOutlinedIcon from '@material-ui/icons/NotificationsActiveOutlined';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import { lengthInterval } from '../../../functions/lengthInterval';
-import { addedActiveRegions } from '../../../store/slice/RegionsSlice';
+import { addedActiveRegions, clearActiveRegions } from '../../../store/slice/RegionsSlice';
 
 import './AlarmBlock.scss';
 
@@ -13,28 +13,19 @@ export const AlarmBlock = () => {
     const { isActive, regions, activeRegions } = useSelector((state) => state.alarmStore);
     const { isActiveFullScreen } = useSelector((state) => state.settingsStore);
 
-    // TODO: Не отображаются регионы
-
     useEffect(() => {
-        Object.entries(regions).filter((el) => {
-            if (el[1].enabled) {
-                console.log('=>>>>>>>>>', el);
-                dispatch(addedActiveRegions(el));
-            } else {
-                // el[1].districts &&
-                //     Object.entries(el[1].districts).filter((elm) => {
-                //         // console.log(elm);
-                //         elm[1].enabled && dispatch(addedActiveRegions(elm));
-                //     });
-            }
-        });
+        // Полностью очищаем массив активных сирен
+        dispatch(clearActiveRegions());
 
-        // for (const key in regions) {
-        //     if (regions[key].enabled) {
-        //         // console.log(regions[key]);
-        //         // console.log(activeRegions.filter((el) => el[0] === regions[key]));
-        //     }
-        // }
+        // Преобразуем обьект в масив и сделаем перебор на активных регион и отправим в новый масив стейта.
+        Object.entries(regions).filter((el) =>
+            el[1].enabled
+                ? dispatch(addedActiveRegions(el))
+                : el[1].districts &&
+                  Object.entries(el[1].districts).filter(
+                      (elm) => elm[1].enabled && dispatch(addedActiveRegions(elm)),
+                  ),
+        );
     }, [regions, dispatch]);
 
     return (

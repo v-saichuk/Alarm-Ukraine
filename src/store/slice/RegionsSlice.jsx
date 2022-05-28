@@ -526,6 +526,9 @@ const RegionsSlice = createSlice({
         addedActiveRegions: (state, action) => {
             state.activeRegions.push(action.payload);
         },
+        clearActiveRegions: (state) => {
+            state.activeRegions = [];
+        },
     },
     extraReducers: {
         [alarmFetch.pending]: (state, action) => {},
@@ -541,4 +544,4 @@ const RegionsSlice = createSlice({
 });
 
 export default RegionsSlice.reducer;
-export const { onActive, addedActiveRegions } = RegionsSlice.actions;
+export const { onActive, addedActiveRegions, clearActiveRegions } = RegionsSlice.actions;
