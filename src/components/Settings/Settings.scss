@@ -3,6 +3,10 @@
     &__btn {
         transition: 0.5s !important;
 
+        @media only screen and (max-width : 425px) {
+            padding: 8px !important;
+        }
+
         &:hover {
             transform: rotate(45deg) !important;
         }

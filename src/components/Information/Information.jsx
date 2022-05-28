@@ -1,5 +1,5 @@
 // Modules
-import * as reactRedux from 'react-redux';
+import { useSelector } from 'react-redux';
 import cn from 'classnames';
 
 // Components
@@ -9,15 +9,15 @@ import { Social } from '../Social/Social';
 import './Information.scss';
 
 export const Information = () => {
-    const { isActiveFullScreen, themeColor } = reactRedux.useSelector(
-        (state) => state.settingsStore,
-    );
+    const { isActiveFullScreen, themeColor, isArrow } = useSelector((state) => state.settingsStore);
+    const { isLoading } = useSelector((state) => state.MinesSlice);
 
     return (
         <div className="information">
             <div
                 className={cn('information__container', {
                     information__container__hidden: isActiveFullScreen,
+                    'information__container--arrow': isArrow,
                 })}>
                 <Social />
                 <div

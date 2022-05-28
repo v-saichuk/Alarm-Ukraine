@@ -5,6 +5,10 @@
         &:hover .minesNav__icon {
             transform: scale(1.1) !important;
         }
+
+        @media only screen and (max-width : 425px) {
+            padding: 8px !important;
+        }
     }
 
     &__icon {

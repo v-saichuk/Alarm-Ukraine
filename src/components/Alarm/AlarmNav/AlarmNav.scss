@@ -1,6 +1,9 @@
 .alarm-nav {
 
     &__btn {
+        @media only screen and (max-width : 425px) {
+            padding: 8px !important;
+        }
 
         &:hover .alarm-nav__icon {
             transform: scale(1.1) !important;
