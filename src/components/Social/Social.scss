@@ -1,6 +1,10 @@
 .social {
     margin-bottom: 10px;
 
+    @media only screen and (max-width : 425px) {
+        margin-bottom: 5px;
+    }
+
     &__wraper {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -8,6 +12,7 @@
 
         @media only screen and (max-width : 425px) {
             grid-template-columns: repeat(5, 1fr);
+            gap: 2px;
         }
     }
 
@@ -33,9 +38,6 @@
                 padding: 4px 8px !important;
             }
 
-            &:hover {
-                opacity: 0.8;
-            }
 
             &_active {
                 transform: rotate(-180deg);

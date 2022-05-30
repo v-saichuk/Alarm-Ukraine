@@ -525,6 +525,10 @@ const RegionsSlice = createSlice({
         },
         addedActiveRegions: (state, action) => {
             state.activeRegions.push(action.payload);
+            state.activeRegions.sort(
+                (prev, next) => Date.parse(next[1].enabled_at) - Date.parse(prev[1].enabled_at),
+            );
+            // Date.parse(prev[1].enabled_at) - Date.parse(next[1].enabled_at)
         },
         clearActiveRegions: (state) => {
             state.activeRegions = [];
