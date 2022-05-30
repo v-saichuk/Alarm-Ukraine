@@ -1,5 +1,7 @@
 # Alarm-Ukraine
 
+![Energo-pro](https://github.com/v-saichuk/Alarm-Ukraine/raw/master/Alarm-Ukraine.png)
+
 # Задействованные технологии
 
 -   React
