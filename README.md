@@ -2,7 +2,7 @@
 
 ![Energo-pro](https://github.com/v-saichuk/Alarm-Ukraine/raw/master/Alarm-Ukraine.png)
 
-# Задействованные технологии
+# Задіяні технології
 
 -   React
 -   Redux
@@ -11,7 +11,7 @@
 -   HTML
 -   SCSS
 
-# Чтобы запустить проект, воспользуйтесь командами ниже
+# Щоб запустити проект, скористайтесь командами нижче
 
 ### `yarn start`
 
